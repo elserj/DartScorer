@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">DartScorer</string>
+    <string name="welcome_message">Please select a game:</string>
+    <string name="cricket_select">Cricket</string>
+    <string name="three01_select">301</string>
+    <string name="player_select">Player Select</string>
+    <string name="num_player_select">Select number of players</string>
+    <string name="name_player_select">Names of players</string>
+    <string name="game_start">Start Game!</string>
+    <string name="cricketwinner_text">is the winner with a score of</string>
+    <string name="cricketwinner_rounds">on round</string>
+</resources>

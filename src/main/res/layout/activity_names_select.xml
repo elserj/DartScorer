@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:layout_alignParentBottom="true"
+    android:orientation="vertical"
+    tools:context=".namesSelect">
+
+    <TextView
+        android:id="@+id/textNamesGame"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="36sp"
+ />
+
+    <ListView
+        android:id="@+id/lvplayerNames"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/btnstartGame"
+        android:layout_below="@id/textNamesGame"
+        android:layout_alignParentTop="true"
+        android:drawSelectorOnTop="false"
+        />
+
+
+    <Button
+        android:id="@+id/btnstartGame"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/game_start"
+        android:textSize="30sp" />
+
+
+</LinearLayout>
+
