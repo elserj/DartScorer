@@ -13,13 +13,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Game mode is "
-        android:textSize="30sp" />
+        android:textSize="30sp"/>
 
     <TextView
         android:id="@+id/gameMode"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="30sp"
+        android:gravity="center"
         />
 
     <TextView
@@ -27,11 +28,14 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/num_player_select"
-        android:textSize="36sp" />
+        android:textSize="36sp"
+        android:gravity="center"/>
     <NumberPicker
         android:id="@+id/playerNumPicker"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:descendantFocusability="blocksDescendants"
+        android:theme="@style/NumberPickerText"
     />
 
     <Button
