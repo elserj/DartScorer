@@ -5,6 +5,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 public class CricketWinner extends AppCompatActivity {
@@ -31,5 +33,16 @@ public class CricketWinner extends AppCompatActivity {
         TextView winnerRounds = (TextView)findViewById(R.id.cricketwinnerRounds);
         winnerRounds.setText(ROUNDS.toString());
         Log.d("myTag", "score = "+SCORE+ "  rounds = "+ROUNDS);
+        Button btn = (Button)findViewById(R.id.cricketWinnerDone);
+        btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                restartGame();
+            }
+        });
+    }
+    private void restartGame() {
+        Intent intent = new Intent(this, Cricket.class);
+        startActivity(intent);
     }
 }
