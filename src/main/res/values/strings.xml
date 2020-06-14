@@ -9,4 +9,5 @@
     <string name="game_start">Start Game!</string>
     <string name="cricketwinner_text">is the winner with a score of</string>
     <string name="cricketwinner_rounds">on round</string>
+    <string name="cricketwinner_done">Another game?</string>
 </resources>
