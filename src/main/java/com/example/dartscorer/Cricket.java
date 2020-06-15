@@ -301,14 +301,14 @@ public class Cricket extends Activity {
 
             // Run until there is a winner
             while(gameOn) {
-                final Integer playerNumber = counter%cricketPlayerList.size();
+                final Integer playerNumber = counter % cricketPlayerList.size();
                 currPlayerView = cricketPlayerList.get(playerNumber).getPlayerView();
                 // Clean up from the previous turn
-                Integer prevplayerNumber = (counter+cricketPlayerList.size()-1)%cricketPlayerList.size();
+                Integer prevplayerNumber = (counter + cricketPlayerList.size() - 1) % cricketPlayerList.size();
                 View prevPlayerView = cricketPlayerList.get(prevplayerNumber).getPlayerView();
                 endTurn(prevPlayerView, cricketPlayerList.get(prevplayerNumber));
                 turn = true;
-                while(turn) {
+                while (turn) {
                     startTurn(currPlayerView, cricketPlayerList.get(playerNumber));
                     Button doneButton = currPlayerView.findViewById(R.id.btnDone);
                     doneButton.setOnClickListener(new View.OnClickListener() {
@@ -357,6 +357,11 @@ public class Cricket extends Activity {
                                   dart15.setOnClickListener(new myOnClickHandler(tempPlayer));
                               }
                           });
+            try {
+                Thread.sleep(500);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
 
 
         }
