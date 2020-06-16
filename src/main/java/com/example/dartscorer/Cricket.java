@@ -289,7 +289,7 @@ public class Cricket extends Activity {
         // Initialize a max score to keep track across turns.
         Integer maxScore = 0;
 
-
+        private Object lock = new Object();
 
         playGameRunnable(List<CricketPlayer> cricketPlayerList) {
             this.cricketPlayerList = cricketPlayerList;
@@ -311,13 +311,27 @@ public class Cricket extends Activity {
                 while (turn) {
                     startTurn(currPlayerView, cricketPlayerList.get(playerNumber));
                     Button doneButton = currPlayerView.findViewById(R.id.btnDone);
+
                     doneButton.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View v) {
-                            turn = false;
+
+                            synchronized (lock) {
+                                lock.notifyAll();
+                                turn = false;
+                            }
                         }
+
                     });
+                    synchronized (lock) {
+                        try {
+                            while(turn) {lock.wait();}
+                        } catch (InterruptedException e) {
+                            e.printStackTrace();
+                        }
+                    }
                 }
+
             }
         }
 
@@ -355,15 +369,10 @@ public class Cricket extends Activity {
                                   dart16.setOnClickListener(new myOnClickHandler(tempPlayer));
                                   ImageButton dart15 = (ImageButton) tempView.findViewById(R.id.ibtnCricket15);
                                   dart15.setOnClickListener(new myOnClickHandler(tempPlayer));
+
+
                               }
                           });
-            try {
-                Thread.sleep(500);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
-
-
         }
 
         // Method for stuff to do at end of turn
