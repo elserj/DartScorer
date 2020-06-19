@@ -36,7 +36,7 @@ public class three01Winner extends AppCompatActivity {
         });
     }
     private void restartGame() {
-        Intent intent = new Intent(this, Cricket.class);
+        Intent intent = new Intent(this, threezeroone.class);
         startActivity(intent);
     }
 }
