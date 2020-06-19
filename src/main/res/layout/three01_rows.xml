@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:id="@+id/ll301Player"
+    android:paddingTop="20dp"
+    >
+
+    <TextView
+        android:layout_width="100dp"
+        android:layout_height="48dp"
+        android:background="@drawable/imagebutton_border"
+        android:textSize="24sp"
+        android:id="@+id/tv301Names"
+        android:gravity="center_horizontal"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/imagebutton_border"
+        android:textSize="48sp"
+        android:id="@+id/tv301Score"
+        android:gravity="center_horizontal"
+        />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="24sp"
+        android:text="Done"
+        android:id="@+id/btn301Done"
+        android:enabled="false"
+        android:visibility="gone"
+        />
+
+</LinearLayout>

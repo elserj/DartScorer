@@ -10,4 +10,11 @@
     <string name="cricketwinner_text">is the winner with a score of</string>
     <string name="cricketwinner_rounds">on round</string>
     <string name="cricketwinner_done">Another game?</string>
+    <string name="dartone">Dart 1</string>
+    <string name="darttwo">Dart 2</string>
+    <string name="dartthree">Dart 3</string>
+    <string name="dartClear">Clear the dart scores?</string>
+    <string name="singleBull">Single Bull</string>
+    <string name="doubleBull">Double Bull</string>
+    <string name="three01winner_text">is the winner</string>
 </resources>

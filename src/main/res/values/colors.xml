@@ -4,5 +4,9 @@
     <color name="colorPrimaryDark">#00574B</color>
     <color name="colorAccent">#D81B60</color>
     <color name="ltblue">#220000FF</color>
-    <color name="myblack">#FF202020</color>
+    <color name="myblack">#bd000000</color>
+    <color name="mywhite">#15000000</color>
+    <color name="myblue">#bd0000ff</color>
+    <color name="myred">#bdff0000</color>
+
 </resources>
