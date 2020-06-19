@@ -31,6 +31,7 @@ public class threezeroone extends Activity {
     private int[] imgLocation = new int[2];
     private float[] imgSize = new float[2];
     private float[] imgCenter = new float[2];
+    private float scaleFactor;
 
     private ArrayList<String> mplayerNames = new ArrayList<String>();
     int ltblue = Color.argb(30, 0, 0, 255);
@@ -125,6 +126,12 @@ public class threezeroone extends Activity {
 
                                                imgCenter[0] = (imgLocation[0] + imgSize[0]) / 2.0f;
                                                imgCenter[1] = (imgLocation[1] + imgSize[1]) / 2.0f;
+
+                                               // Calculate the scaleFactor to multiply the distances by so it will scale on different screens
+                                               // Needs to be divided by "300" because my initial testing was on a device with 600 wide screen
+                                               scaleFactor = imgCenter[0]/300.0f;
+
+                                               Log.d("Tag", "scaleFactor = "+scaleFactor);
 
                                                X = X - imgCenter[0];
                                                Y = Y - imgCenter[1];
@@ -349,6 +356,8 @@ public class threezeroone extends Activity {
 
     public String getSector(float radius) {
         String string;
+        // divide radius by scaleFactor to get scaled version
+        radius = radius / scaleFactor;
         if(radius <= 20.0) {
             string = "double_bull";
         }else if (radius > 20.0 && radius <= 40.0) {
