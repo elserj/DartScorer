@@ -315,34 +315,37 @@ public class threezeroone extends Activity {
             });
         }
 
-        public int computeDart(String string) {
-            int score;
-            if(string.equals("Single Bull")) {
-                score =25;
-            }else if(string.equals("Double Bull")) {
-                score = 50;
-            }else if(string.equals("miss")) {
-                score = 0;
-            }else{
-                int multiplier = 0;
-                String[] split = string.split("\\s");
-                if(split[0].equals("single")){
-                    multiplier = 1;
-                }else if(split[0].equals("double")){
-                    multiplier = 2;
-                }else if(split[0].equals("triple")){
-                    multiplier = 3;
-                }
-                score = multiplier * Integer.parseInt(split[1]);
-            }
-            return score;
-        }
+
     }
 
+    public int computeDart(String string) {
+        int score;
+        if(string.equals("Single Bull")) {
+            score =25;
+        }else if(string.equals("Double Bull")) {
+            score = 50;
+        }else if(string.equals("miss")) {
+            score = 0;
+        }else{
+            int multiplier = 0;
+            String[] split = string.split("\\s");
+            if(split[0].equals("single")){
+                multiplier = 1;
+            }else if(split[0].equals("double")){
+                multiplier = 2;
+            }else if(split[0].equals("triple")){
+                multiplier = 3;
+            }
+            score = multiplier * Integer.parseInt(split[1]);
+        }
+        return score;
+    }
 
 
     public float getRadius (float x, float y) {
         float radius = (float) Math.sqrt(x*x + y*y);
+        // divide radius by scaleFactor to get scaled version
+        radius = radius / scaleFactor;
         return radius;
     }
 
@@ -356,8 +359,6 @@ public class threezeroone extends Activity {
 
     public String getSector(float radius) {
         String string;
-        // divide radius by scaleFactor to get scaled version
-        radius = radius / scaleFactor;
         if(radius <= 20.0) {
             string = "double_bull";
         }else if (radius > 20.0 && radius <= 40.0) {
