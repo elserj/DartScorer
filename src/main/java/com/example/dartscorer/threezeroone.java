@@ -262,34 +262,45 @@ public class threezeroone extends Activity {
                     TextView tvdart2 = (TextView) findViewById(R.id.dart2);
                     TextView tvdart3 = (TextView) findViewById(R.id.dart3);
 
-                    if(!tvdart1.getText().toString().equals("") || !tvdart2.getText().toString().equals("") || !tvdart3.getText().toString().equals("")) {
-                        int cumulScore = player.getScore();
-                        cumulScore -= computeDart(tvdart1.getText().toString());
-                        cumulScore -= computeDart(tvdart2.getText().toString());
-                        cumulScore -= computeDart(tvdart3.getText().toString());
-
-                        // Check to see if negative and throw away if it is
-                        if(cumulScore < 0) {
-                            cumulScore = player.getScore();
-                        }
-
-                        // Check if winner
-                        if(cumulScore == 0) {
-                            gameOn = false;
-                            Integer rounds = (int) Math.floor(counter / three01PlayerList.size())+1;
-                            Intent intent = new Intent(threezeroone.this, three01Winner.class);
-                            Bundle extras = new Bundle();
-                            extras.putString("EXTRA_NAME", player.getNamePlayer());
-                            extras.putInt("EXTRA_ROUNDS",rounds);
-                            intent.putExtras(extras);
-                            startActivity(intent);
-                        }
-
-                        player.setScore(cumulScore);
-                        String playerScore = Integer.toString(player.getScore());
-                        TextView scoreView = tempView.findViewById(R.id.tv301Score);
-                        scoreView.setText(playerScore);
+                    if(tvdart1.getText().toString().equals("")) {
+                        tvdart1.setText("miss");
                     }
+
+                    if(tvdart2.getText().toString().equals("")) {
+                        tvdart2.setText("miss");
+                    }
+
+                    if(tvdart3.getText().toString().equals("")) {
+                        tvdart3.setText("miss");
+                    }
+
+                    int cumulScore = player.getScore();
+                    cumulScore -= computeDart(tvdart1.getText().toString());
+                    cumulScore -= computeDart(tvdart2.getText().toString());
+                    cumulScore -= computeDart(tvdart3.getText().toString());
+
+                    // Check to see if negative and throw away if it is
+                    if(cumulScore < 0) {
+                        cumulScore = player.getScore();
+                    }
+
+                    // Check if winner
+                    if(cumulScore == 0) {
+                        gameOn = false;
+                        Integer rounds = (int) Math.floor(counter / three01PlayerList.size())+1;
+                        Intent intent = new Intent(threezeroone.this, three01Winner.class);
+                        Bundle extras = new Bundle();
+                        extras.putString("EXTRA_NAME", player.getNamePlayer());
+                        extras.putInt("EXTRA_ROUNDS",rounds);
+                        intent.putExtras(extras);
+                        startActivity(intent);
+                    }
+
+                    player.setScore(cumulScore);
+                    String playerScore = Integer.toString(player.getScore());
+                    TextView scoreView = tempView.findViewById(R.id.tv301Score);
+                    scoreView.setText(playerScore);
+
 
 
                     tvdart1.setText("");
