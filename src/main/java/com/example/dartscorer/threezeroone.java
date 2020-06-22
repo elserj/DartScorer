@@ -131,7 +131,6 @@ public class threezeroone extends Activity {
                                                // Needs to be divided by "300" because my initial testing was on a device with 600 wide screen
                                                scaleFactor = imgCenter[0]/300.0f;
 
-                                               Log.d("Tag", "scaleFactor = "+scaleFactor);
 
                                                X = X - imgCenter[0];
                                                Y = Y - imgCenter[1];
