@@ -24,7 +24,7 @@
 
         <RadioButton
             android:id="@+id/radioButton"
-            android:layout_width="174dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/cricket_select"
             android:textSize="36sp"
@@ -32,10 +32,27 @@
 
         <RadioButton
             android:id="@+id/radioButton1"
-            android:layout_width="139dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/three01_select"
             android:textSize="36sp"/>
+
+        <RadioButton
+            android:id="@+id/radioButton2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/five01_select"
+            android:textSize="36sp"
+            />
+
+        <RadioButton
+            android:id="@+id/radioButton3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/seven01_select"
+            android:textSize="36sp"
+            />
+
     </RadioGroup>
 
     <LinearLayout

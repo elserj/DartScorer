@@ -39,12 +39,19 @@ public class threezeroone extends Activity {
     public Integer counter =0;
     public static boolean turn;
 
+    private String GAME;
+
     public ImageView imgView;
     @SuppressLint("ClickableViewAccessibility")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_threezeroone);
+
+        Intent intent = getIntent();
+        Bundle extras = getIntent().getExtras();
+        GAME = extras.getString("EXTRA_GAME");
+
         imgView = (ImageView) findViewById(R.id.dartboard_full);
 
         // Get the player names from the nameSelect activity
@@ -72,7 +79,7 @@ public class threezeroone extends Activity {
             nameText.setText(mplayerNames.get(i));
 
             TextView scoreText = (TextView) childView.findViewById(R.id.tv301Score);
-            scoreText.setText("301");
+            scoreText.setText(GAME);
             three01Layout.addView(childView);
 
             if (i == 0) {
@@ -80,7 +87,7 @@ public class threezeroone extends Activity {
                 childView.findViewById(R.id.btn301Done).setEnabled(true);
                 childView.findViewById(R.id.btn301Done).setVisibility(View.VISIBLE);
             }
-            three01PlayerList.add(new Three01Player(mplayerNames.get(i),childView));
+            three01PlayerList.add(new Three01Player(mplayerNames.get(i),childView, GAME));
         }
 
         playGame(three01PlayerList);

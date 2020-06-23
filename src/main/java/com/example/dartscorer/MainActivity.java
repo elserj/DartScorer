@@ -41,6 +41,12 @@ public class MainActivity extends AppCompatActivity {
             case R.id.radioButton1:
                 GAME = "301";
                 break;
+            case R.id.radioButton2:
+                GAME = "501";
+                break;
+            case R.id.radioButton3:
+                GAME = "701";
+                break;
         }
     }
     public void openplayerSelect() {

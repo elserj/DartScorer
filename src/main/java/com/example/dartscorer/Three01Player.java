@@ -9,9 +9,9 @@ public class Three01Player {
     private int score;
     private View playerView;
 
-    public Three01Player(String name, View view) {
+    public Three01Player(String name, View view, String game) {
         namePlayer = name;
-        score = 301;
+        score = Integer.parseInt(game);
         playerView = view;
     }
 

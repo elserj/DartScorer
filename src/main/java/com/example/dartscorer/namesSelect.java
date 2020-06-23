@@ -43,7 +43,7 @@ public class namesSelect extends AppCompatActivity {
         // Choose class for next activity based on GAME mode chosen
         if(GAME.equals("Cricket")) {
             nextActivity = Cricket.class;
-        }else if(GAME.equals("301")) {
+        }else if(GAME.equals("301") || GAME.equals("501") || GAME.equals("701")) {
             nextActivity = threezeroone.class;
         }
 
@@ -59,6 +59,9 @@ public class namesSelect extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(namesSelect.this, nextActivity);
+                Bundle extras = new Bundle();
+                extras.putString("EXTRA_GAME", GAME);
+                intent.putExtras(extras);
                 startActivity(intent);
             }
         });
