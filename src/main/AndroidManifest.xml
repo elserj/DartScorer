@@ -9,18 +9,22 @@
         android:roundIcon="@mipmap/dartboard_full_icon"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".three01Winner"
-            android:parentActivityName=".threezeroone"
-            ></activity>
+        <activity
+            android:name=".three01Winner"
+            android:parentActivityName=".threezeroone" />
         <activity
             android:name=".CricketWinner"
             android:parentActivityName=".Cricket" />
         <activity
             android:name=".threezeroone"
-            android:parentActivityName=".namesSelect" />
+            android:configChanges="orientation|keyboardHidden"
+            android:parentActivityName=".namesSelect"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".Cricket"
-            android:parentActivityName=".namesSelect" />
+            android:configChanges="orientation|keyboardHidden"
+            android:parentActivityName=".namesSelect"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".namesSelect"
             android:parentActivityName=".playerSelect" />
