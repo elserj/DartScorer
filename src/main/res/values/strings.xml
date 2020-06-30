@@ -20,4 +20,6 @@
     <string name="doubleBull">Double Bull</string>
     <string name="three01winner_text">is the winner</string>
     <string name="done">Done!</string>
+    <string name="double_in">Double in</string>
+    <string name="double_out">Double out</string>
 </resources>

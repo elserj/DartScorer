@@ -6,11 +6,14 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.Button;
+import android.widget.CheckBox;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -26,6 +29,7 @@ public class namesSelect extends AppCompatActivity {
     public ArrayList<EditModel> editModelArrayList;
     private Button btnstartGame;
     private Class nextActivity;
+    private CheckBox doubleIn, doubleOut;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,6 +49,10 @@ public class namesSelect extends AppCompatActivity {
             nextActivity = Cricket.class;
         }else if(GAME.equals("301") || GAME.equals("501") || GAME.equals("701")) {
             nextActivity = threezeroone.class;
+            LinearLayout doubleLayout = findViewById(R.id.lldouble);
+            doubleLayout.setVisibility(View.VISIBLE);
+            doubleIn = findViewById(R.id.cbDoublein);
+            doubleOut = findViewById(R.id.cbDoubleout);
         }
 
         mplayerList = (ListView) findViewById(R.id.lvplayerNames);
@@ -61,6 +69,12 @@ public class namesSelect extends AppCompatActivity {
                 Intent intent = new Intent(namesSelect.this, nextActivity);
                 Bundle extras = new Bundle();
                 extras.putString("EXTRA_GAME", GAME);
+                if(doubleIn.isChecked()) {
+                    extras.putBoolean("EXTRA_DOUBLEIN", true);
+                }
+                if(doubleOut.isChecked()) {
+                    extras.putBoolean("EXTRA_DOUBLEOUT", true);
+                }
                 intent.putExtras(extras);
                 startActivity(intent);
             }

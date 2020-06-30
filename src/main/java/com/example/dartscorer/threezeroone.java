@@ -38,6 +38,7 @@ public class threezeroone extends Activity {
     int white = Color.argb(0, 0, 0, 0);
     public Integer counter =0;
     public static boolean turn;
+    public static boolean doubleIn, doubleOut;
 
     private String GAME;
 
@@ -51,6 +52,17 @@ public class threezeroone extends Activity {
         Intent intent = getIntent();
         Bundle extras = getIntent().getExtras();
         GAME = extras.getString("EXTRA_GAME");
+
+        doubleIn = extras.getBoolean("EXTRA_DOUBLEIN");
+        doubleOut = extras.getBoolean("EXTRA_DOUBLEOUT");
+
+        if(doubleIn) {
+
+            Log.d("myTag", "doubleIN");
+        }
+        if(doubleOut) {
+            Log.d("TAG", "doubleOUT");
+        }
 
         imgView = (ImageView) findViewById(R.id.dartboard_full);
 
