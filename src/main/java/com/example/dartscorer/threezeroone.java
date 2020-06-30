@@ -56,14 +56,6 @@ public class threezeroone extends Activity {
         doubleIn = extras.getBoolean("EXTRA_DOUBLEIN");
         doubleOut = extras.getBoolean("EXTRA_DOUBLEOUT");
 
-        if(doubleIn) {
-
-            Log.d("myTag", "doubleIN");
-        }
-        if(doubleOut) {
-            Log.d("TAG", "doubleOUT");
-        }
-
         imgView = (ImageView) findViewById(R.id.dartboard_full);
 
         // Get the player names from the nameSelect activity
