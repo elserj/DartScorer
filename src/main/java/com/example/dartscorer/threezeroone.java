@@ -286,9 +286,23 @@ public class threezeroone extends Activity {
                     }
 
                     int cumulScore = player.getScore();
-                    cumulScore -= computeDart(tvdart1.getText().toString());
-                    cumulScore -= computeDart(tvdart2.getText().toString());
-                    cumulScore -= computeDart(tvdart3.getText().toString());
+                    // if game is doubleIn
+                    if(cumulScore == Integer.parseInt(GAME) && doubleIn) {
+                        if(tvdart1.getText().toString().contains("ouble")) {
+                            cumulScore -= computeDart(tvdart1.getText().toString());
+                            cumulScore -= computeDart(tvdart2.getText().toString());
+                            cumulScore -= computeDart(tvdart3.getText().toString());
+                        }else if(tvdart2.getText().toString().contains("ouble")) {
+                            cumulScore -= computeDart(tvdart2.getText().toString());
+                            cumulScore -= computeDart(tvdart3.getText().toString());
+                        }else if(tvdart3.getText().toString().contains("ouble")) {
+                            cumulScore -= computeDart(tvdart3.getText().toString());
+                        }
+                    }else{
+                        cumulScore -= computeDart(tvdart1.getText().toString());
+                        cumulScore -= computeDart(tvdart2.getText().toString());
+                        cumulScore -= computeDart(tvdart3.getText().toString());
+                    }
 
                     // Check to see if negative and throw away if it is
                     if(cumulScore < 0) {
@@ -297,14 +311,37 @@ public class threezeroone extends Activity {
 
                     // Check if winner
                     if(cumulScore == 0) {
-                        gameOn = false;
-                        Integer rounds = (int) Math.floor(counter / three01PlayerList.size())+1;
-                        Intent intent = new Intent(threezeroone.this, three01Winner.class);
-                        Bundle extras = new Bundle();
-                        extras.putString("EXTRA_NAME", player.getNamePlayer());
-                        extras.putInt("EXTRA_ROUNDS",rounds);
-                        intent.putExtras(extras);
-                        startActivity(intent);
+                        Boolean finished = false;
+                        if(doubleOut){
+                            if(tvdart1.getText().toString().contains("ouble") && tvdart2.getText().toString().equals("miss") && tvdart3.getText().toString().equals("miss")) {
+                                finished = true;
+                            }else if(tvdart2.getText().toString().contains("ouble") && tvdart3.getText().toString().equals("miss")) {
+                                finished = true;
+                            }else if(tvdart3.getText().toString().contains("ouble")) {
+                                finished = true;
+                            }
+                        }else {
+                            finished = true;
+                        }
+                        if(finished) {
+                            gameOn = false;
+                            Integer rounds = (int) Math.floor(counter / three01PlayerList.size()) + 1;
+                            Intent intent = new Intent(threezeroone.this, three01Winner.class);
+                            Bundle extras = new Bundle();
+                            extras.putString("EXTRA_NAME", player.getNamePlayer());
+                            extras.putInt("EXTRA_ROUNDS", rounds);
+                            extras.putString("EXTRA_GAME", GAME);
+                            if(doubleIn) {
+                                extras.putBoolean("EXTRA_DOUBLEIN", true);
+                            }
+                            if(doubleOut) {
+                                extras.putBoolean("EXTRA_DOUBLEOUT", true);
+                            }
+                            intent.putExtras(extras);
+                            startActivity(intent);
+                        }else{
+                            cumulScore = player.getScore();
+                        }
                     }
 
                     player.setScore(cumulScore);
