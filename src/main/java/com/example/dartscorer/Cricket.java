@@ -99,7 +99,7 @@ public class Cricket extends Activity {
                 childView.findViewById(R.id.tvCricketNames).setBackgroundColor(ltblue);
                 childView.findViewById(R.id.btnDone).setEnabled(true);
                 childView.findViewById(R.id.btnDone).setVisibility(View.VISIBLE);
-                childView.findViewById(R.id.btnUndo).setEnabled(true);
+                childView.findViewById(R.id.btnUndo).setEnabled(false);
                 childView.findViewById(R.id.btnUndo).setVisibility(View.VISIBLE);
                 cricketPlayerArrayList.add(new CricketPlayer(mplayerNames.get(i), childView, true));
             } else {
@@ -136,6 +136,8 @@ public class Cricket extends Activity {
             // Logic for each dart button
             Integer number;
             ImageButton btn;
+            // If a dart image button has been clicked, enable the undo button
+            playerView.findViewById(R.id.btnUndo).setEnabled(true);
             switch (v.getId()) {
                 case R.id.ibtnCricket15:
                     number = player.getNum15();
@@ -367,6 +369,9 @@ public class Cricket extends Activity {
                                     @Override
                                     public void run() {
                                         if(scoreStack.size() >= 1) {
+                                            if(scoreStack.size() == 1) {
+                                                currPlayerView.findViewById(R.id.btnUndo).setEnabled(false);
+                                            }
                                             String lastMove = scoreStack.remove(scoreStack.size() - 1);
                                             if (lastMove.equals("num15")) {
                                                 currPlayer.decrementDart("num15");
@@ -479,7 +484,7 @@ public class Cricket extends Activity {
                                   tempView.findViewById(R.id.tvCricketNames).setBackgroundColor(ltblue);
                                   tempView.findViewById(R.id.btnDone).setEnabled(true);
                                   tempView.findViewById(R.id.btnDone).setVisibility(View.VISIBLE);
-                                  tempView.findViewById(R.id.btnUndo).setEnabled(true);
+                                  tempView.findViewById(R.id.btnUndo).setEnabled(false);
                                   tempView.findViewById(R.id.btnUndo).setVisibility(View.VISIBLE);
                                   tempView.findViewById(R.id.ibtnCricketBull).setEnabled(true);
                                   tempView.findViewById(R.id.ibtnCricket20).setEnabled(true);
