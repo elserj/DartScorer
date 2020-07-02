@@ -111,6 +111,25 @@ public class CricketPlayer {
 
     }
 
+    public void decrementDart(String number) {
+        if(number == "num20") {
+            this.num20--;
+        }else if(number == "num19") {
+            this.num19--;
+        }else if(number == "num18") {
+            this.num18--;
+        }else if(number == "num17") {
+            this.num17--;
+        }else if(number == "num16") {
+            this.num16--;
+        }else if(number == "num15") {
+            this.num15--;
+        }else if(number == "numBull") {
+            this.numBull--;
+        }
+
+    }
+
     public void setScore(int number) {
         this.score = number;
     }

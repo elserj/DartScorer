@@ -22,4 +22,5 @@
     <string name="done">Done!</string>
     <string name="double_in">Double in</string>
     <string name="double_out">Double out</string>
+    <string name="undo">Undo</string>
 </resources>

@@ -34,6 +34,8 @@ public class Cricket extends Activity {
     int white = Color.argb(0, 0, 0, 0);
     public Integer counter =0;
     public static boolean turn;
+    // scoreStack will store the darts as they are entered for the undo function
+    public ArrayList<String> scoreStack = new ArrayList<String>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -97,6 +99,8 @@ public class Cricket extends Activity {
                 childView.findViewById(R.id.tvCricketNames).setBackgroundColor(ltblue);
                 childView.findViewById(R.id.btnDone).setEnabled(true);
                 childView.findViewById(R.id.btnDone).setVisibility(View.VISIBLE);
+                childView.findViewById(R.id.btnUndo).setEnabled(true);
+                childView.findViewById(R.id.btnUndo).setVisibility(View.VISIBLE);
                 cricketPlayerArrayList.add(new CricketPlayer(mplayerNames.get(i), childView, true));
             } else {
                 childView.findViewById(R.id.ibtnCricketBull).setEnabled(false);
@@ -138,16 +142,20 @@ public class Cricket extends Activity {
                     btn = v.findViewById(R.id.ibtnCricket15);
                     if (number == 0) {
                         btn.setImageResource(R.drawable.darts_single);
+                        scoreStack.add("num15");
                     } else if (number == 1) {
                         btn.setImageResource(R.drawable.darts_double);
+                        scoreStack.add("num15");
                     } else if (number == 2) {
                         btn.setImageResource(R.drawable.darts_triple);
+                        scoreStack.add("num15");
                     } else if (number == 3){
                         Integer score = player.getScore();
                         player.setScore(score + 15);
                         score = player.getScore();
                         TextView scoreView = playerView.findViewById(R.id.tvCricketScore);
                         scoreView.setText(score.toString());
+                        scoreStack.add("15");
                         break;
                     }
                     player.incrementDart("num15");
@@ -157,16 +165,20 @@ public class Cricket extends Activity {
                     btn = v.findViewById(R.id.ibtnCricket16);
                     if (number == 0) {
                         btn.setImageResource(R.drawable.darts_single);
+                        scoreStack.add("num16");
                     } else if (number == 1) {
                         btn.setImageResource(R.drawable.darts_double);
+                        scoreStack.add("num16");
                     } else if (number == 2) {
                         btn.setImageResource(R.drawable.darts_triple);
+                        scoreStack.add("num16");
                     } else if (number == 3){
                         Integer score = player.getScore();
                         player.setScore(score + 16);
                         score = player.getScore();
                         TextView scoreView = playerView.findViewById(R.id.tvCricketScore);
                         scoreView.setText(score.toString());
+                        scoreStack.add("16");
                         break;
                     }
                     player.incrementDart("num16");
@@ -176,16 +188,20 @@ public class Cricket extends Activity {
                     btn = v.findViewById(R.id.ibtnCricket17);
                     if (number == 0) {
                         btn.setImageResource(R.drawable.darts_single);
+                        scoreStack.add("num17");
                     } else if (number == 1) {
                         btn.setImageResource(R.drawable.darts_double);
+                        scoreStack.add("num17");
                     } else if (number == 2) {
                         btn.setImageResource(R.drawable.darts_triple);
+                        scoreStack.add("num17");
                     } else if (number == 3){
                         Integer score = player.getScore();
                         player.setScore(score + 17);
                         score = player.getScore();
                         TextView scoreView = playerView.findViewById(R.id.tvCricketScore);
                         scoreView.setText(score.toString());
+                        scoreStack.add("17");
                         break;
                     }
                     player.incrementDart("num17");
@@ -195,16 +211,20 @@ public class Cricket extends Activity {
                     btn = v.findViewById(R.id.ibtnCricket18);
                     if (number == 0) {
                         btn.setImageResource(R.drawable.darts_single);
+                        scoreStack.add("num18");
                     } else if (number == 1) {
                         btn.setImageResource(R.drawable.darts_double);
+                        scoreStack.add("num18");
                     } else if (number == 2) {
                         btn.setImageResource(R.drawable.darts_triple);
+                        scoreStack.add("num18");
                     } else if (number == 3){
                         Integer score = player.getScore();
                         player.setScore(score + 18);
                         score = player.getScore();
                         TextView scoreView = playerView.findViewById(R.id.tvCricketScore);
                         scoreView.setText(score.toString());
+                        scoreStack.add("18");
                         break;
                     }
                     player.incrementDart("num18");
@@ -214,16 +234,20 @@ public class Cricket extends Activity {
                     btn = v.findViewById(R.id.ibtnCricket19);
                     if (number == 0) {
                         btn.setImageResource(R.drawable.darts_single);
+                        scoreStack.add("num19");
                     } else if (number == 1) {
                         btn.setImageResource(R.drawable.darts_double);
+                        scoreStack.add("num19");
                     } else if (number == 2) {
                         btn.setImageResource(R.drawable.darts_triple);
+                        scoreStack.add("num19");
                     } else if (number == 3){
                         Integer score = player.getScore();
                         player.setScore(score + 19);
                         score = player.getScore();
                         TextView scoreView = playerView.findViewById(R.id.tvCricketScore);
                         scoreView.setText(score.toString());
+                        scoreStack.add("19");
                         break;
                     }
                     player.incrementDart("num19");
@@ -233,16 +257,20 @@ public class Cricket extends Activity {
                     btn = v.findViewById(R.id.ibtnCricket20);
                     if (number == 0) {
                         btn.setImageResource(R.drawable.darts_single);
+                        scoreStack.add("num20");
                     } else if (number == 1) {
                         btn.setImageResource(R.drawable.darts_double);
+                        scoreStack.add("num20");
                     } else if (number == 2) {
                         btn.setImageResource(R.drawable.darts_triple);
+                        scoreStack.add("num20");
                     } else if (number == 3){
                         Integer score = player.getScore();
                         player.setScore(score + 20);
                         score = player.getScore();
                         TextView scoreView = playerView.findViewById(R.id.tvCricketScore);
                         scoreView.setText(score.toString());
+                        scoreStack.add("num20");
                         break;
                     }
                     player.incrementDart("num20");
@@ -252,16 +280,20 @@ public class Cricket extends Activity {
                     btn = v.findViewById(R.id.ibtnCricketBull);
                     if (number == 0) {
                         btn.setImageResource(R.drawable.darts_single);
+                        scoreStack.add("numBull");
                     } else if (number == 1) {
                         btn.setImageResource(R.drawable.darts_double);
+                        scoreStack.add("numBull");
                     } else if (number == 2) {
                         btn.setImageResource(R.drawable.darts_triple);
+                        scoreStack.add("numBull");
                     } else if (number == 3){
                         Integer score = player.getScore();
                         player.setScore(score + 25);
                         score = player.getScore();
                         TextView scoreView = playerView.findViewById(R.id.tvCricketScore);
                         scoreView.setText(score.toString());
+                        scoreStack.add("25");
                         break;
                     }
                     player.incrementDart("numBull");
@@ -309,7 +341,8 @@ public class Cricket extends Activity {
                 endTurn(prevPlayerView, cricketPlayerList.get(prevplayerNumber));
                 turn = true;
                 while (turn) {
-                    startTurn(currPlayerView, cricketPlayerList.get(playerNumber));
+                    final CricketPlayer currPlayer = cricketPlayerList.get(playerNumber);
+                    startTurn(currPlayerView, currPlayer);
                     Button doneButton = currPlayerView.findViewById(R.id.btnDone);
 
                     doneButton.setOnClickListener(new View.OnClickListener() {
@@ -322,6 +355,103 @@ public class Cricket extends Activity {
                             }
                         }
 
+                    });
+                    // If the player clicks undo, undo the last thing in the scoreStack
+                    Button undoButton = currPlayerView.findViewById(R.id.btnUndo);
+                    undoButton.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            synchronized (lock) {
+                                lock.notify();
+                                runOnUiThread(new Runnable() {
+                                    @Override
+                                    public void run() {
+                                        if(scoreStack.size() >= 1) {
+                                            String lastMove = scoreStack.remove(scoreStack.size() - 1);
+                                            if (lastMove.equals("num15")) {
+                                                currPlayer.decrementDart("num15");
+                                                ImageButton currButton = currPlayerView.findViewById(R.id.ibtnCricket15);
+                                                if (currPlayer.getNum15() == 0) {
+                                                    currButton.setImageResource(R.drawable.darts_blank);
+                                                } else if (currPlayer.getNum15() == 1) {
+                                                    currButton.setImageResource(R.drawable.darts_single);
+                                                } else if (currPlayer.getNum15() == 2) {
+                                                    currButton.setImageResource(R.drawable.darts_double);
+                                                }
+                                            } else if (lastMove.equals("num16")) {
+                                                currPlayer.decrementDart("num16");
+                                                ImageButton currButton = currPlayerView.findViewById(R.id.ibtnCricket16);
+                                                if (currPlayer.getNum16() == 0) {
+                                                    currButton.setImageResource(R.drawable.darts_blank);
+                                                } else if (currPlayer.getNum16() == 1) {
+                                                    currButton.setImageResource(R.drawable.darts_single);
+                                                } else if (currPlayer.getNum16() == 2) {
+                                                    currButton.setImageResource(R.drawable.darts_double);
+                                                }
+                                            } else if (lastMove.equals("num17")) {
+                                                currPlayer.decrementDart("num17");
+                                                ImageButton currButton = currPlayerView.findViewById(R.id.ibtnCricket17);
+                                                if (currPlayer.getNum17() == 0) {
+                                                    currButton.setImageResource(R.drawable.darts_blank);
+                                                } else if (currPlayer.getNum17() == 1) {
+                                                    currButton.setImageResource(R.drawable.darts_single);
+                                                } else if (currPlayer.getNum17() == 2) {
+                                                    currButton.setImageResource(R.drawable.darts_double);
+                                                }
+                                            } else if (lastMove.equals("num18")) {
+                                                currPlayer.decrementDart("num18");
+                                                ImageButton currButton = currPlayerView.findViewById(R.id.ibtnCricket18);
+                                                if (currPlayer.getNum18() == 0) {
+                                                    currButton.setImageResource(R.drawable.darts_blank);
+                                                } else if (currPlayer.getNum18() == 1) {
+                                                    currButton.setImageResource(R.drawable.darts_single);
+                                                } else if (currPlayer.getNum18() == 2) {
+                                                    currButton.setImageResource(R.drawable.darts_double);
+                                                }
+                                            } else if (lastMove.equals("num19")) {
+                                                currPlayer.decrementDart("num19");
+                                                ImageButton currButton = currPlayerView.findViewById(R.id.ibtnCricket19);
+                                                if (currPlayer.getNum19() == 0) {
+                                                    currButton.setImageResource(R.drawable.darts_blank);
+                                                } else if (currPlayer.getNum19() == 1) {
+                                                    currButton.setImageResource(R.drawable.darts_single);
+                                                } else if (currPlayer.getNum19() == 2) {
+                                                    currButton.setImageResource(R.drawable.darts_double);
+                                                }
+                                            } else if (lastMove.equals("num20")) {
+                                                currPlayer.decrementDart("num20");
+                                                ImageButton currButton = currPlayerView.findViewById(R.id.ibtnCricket20);
+                                                if (currPlayer.getNum20() == 0) {
+                                                    currButton.setImageResource(R.drawable.darts_blank);
+                                                } else if (currPlayer.getNum20() == 1) {
+                                                    currButton.setImageResource(R.drawable.darts_single);
+                                                } else if (currPlayer.getNum20() == 2) {
+                                                    currButton.setImageResource(R.drawable.darts_double);
+                                                }
+                                            } else if (lastMove.equals("numBull")) {
+                                                currPlayer.decrementDart("numBull");
+                                                ImageButton currButton = currPlayerView.findViewById(R.id.ibtnCricketBull);
+                                                if (currPlayer.getNumBull() == 0) {
+                                                    currButton.setImageResource(R.drawable.darts_blank);
+                                                } else if (currPlayer.getNumBull() == 1) {
+                                                    currButton.setImageResource(R.drawable.darts_single);
+                                                } else if (currPlayer.getNumBull() == 2) {
+                                                    currButton.setImageResource(R.drawable.darts_double);
+                                                }
+                                            } else {
+                                                Integer currScore = currPlayer.getScore();
+                                                Integer subtract = Integer.parseInt(lastMove);
+                                                currPlayer.setScore(currScore - subtract);
+                                                currScore = currPlayer.getScore();
+                                                TextView scoreView = currPlayerView.findViewById(R.id.tvCricketScore);
+                                                scoreView.setText(currScore.toString());
+                                            }
+                                        }
+                                    }
+                                });
+                            }
+
+                        }
                     });
                     synchronized (lock) {
                         try {
@@ -340,6 +470,8 @@ public class Cricket extends Activity {
             // Need to make a temporary View variable to store currPlayerView so I can declare it final and run on UI thread
             final View tempView = currPlayerView;
             final CricketPlayer tempPlayer = player;
+
+            scoreStack.clear();
             // turn on buttons
             runOnUiThread(new Runnable() {
                               @Override
@@ -347,6 +479,8 @@ public class Cricket extends Activity {
                                   tempView.findViewById(R.id.tvCricketNames).setBackgroundColor(ltblue);
                                   tempView.findViewById(R.id.btnDone).setEnabled(true);
                                   tempView.findViewById(R.id.btnDone).setVisibility(View.VISIBLE);
+                                  tempView.findViewById(R.id.btnUndo).setEnabled(true);
+                                  tempView.findViewById(R.id.btnUndo).setVisibility(View.VISIBLE);
                                   tempView.findViewById(R.id.ibtnCricketBull).setEnabled(true);
                                   tempView.findViewById(R.id.ibtnCricket20).setEnabled(true);
                                   tempView.findViewById(R.id.ibtnCricket19).setEnabled(true);
@@ -387,6 +521,8 @@ public class Cricket extends Activity {
                     tempView.findViewById(R.id.tvCricketNames).setBackgroundColor(white);
                     tempView.findViewById(R.id.btnDone).setEnabled(false);
                     tempView.findViewById(R.id.btnDone).setVisibility(View.GONE);
+                    tempView.findViewById(R.id.btnUndo).setEnabled(false);
+                    tempView.findViewById(R.id.btnUndo).setVisibility(View.GONE);
                     tempView.findViewById(R.id.ibtnCricketBull).setEnabled(false);
                     tempView.findViewById(R.id.ibtnCricket20).setEnabled(false);
                     tempView.findViewById(R.id.ibtnCricket19).setEnabled(false);
