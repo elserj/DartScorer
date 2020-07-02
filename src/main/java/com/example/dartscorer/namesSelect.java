@@ -69,11 +69,13 @@ public class namesSelect extends AppCompatActivity {
                 Intent intent = new Intent(namesSelect.this, nextActivity);
                 Bundle extras = new Bundle();
                 extras.putString("EXTRA_GAME", GAME);
-                if(doubleIn.isChecked()) {
-                    extras.putBoolean("EXTRA_DOUBLEIN", true);
-                }
-                if(doubleOut.isChecked()) {
-                    extras.putBoolean("EXTRA_DOUBLEOUT", true);
+                if(!GAME.equals("Cricket")) {
+                    if (doubleIn.isChecked()) {
+                        extras.putBoolean("EXTRA_DOUBLEIN", true);
+                    }
+                    if (doubleOut.isChecked()) {
+                        extras.putBoolean("EXTRA_DOUBLEOUT", true);
+                    }
                 }
                 intent.putExtras(extras);
                 startActivity(intent);
