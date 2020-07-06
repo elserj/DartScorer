@@ -23,30 +23,38 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
+        android:paddingTop="24dp"
+        android:paddingLeft="84dp"
+        android:paddingRight="84dp"
         >
 
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="@dimen/_42sdp"
             android:layout_height="wrap_content"
-            android:textSize="24sp"
+            android:textSize="32sp"
             android:text="@string/dartone"
             android:layout_weight="1"
-            android:paddingStart="64dp"
+            android:gravity="center"
+            android:background="@drawable/imagebutton_border"
         />
 
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="@dimen/_42sdp"
             android:layout_height="wrap_content"
-            android:textSize="24sp"
+            android:textSize="32sp"
             android:text="@string/darttwo"
             android:layout_weight="1"
+            android:gravity="center"
+            android:background="@drawable/imagebutton_border"
         />
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="@dimen/_42sdp"
             android:layout_height="wrap_content"
-            android:textSize="24dp"
+            android:textSize="32sp"
             android:text="@string/dartthree"
             android:layout_weight="1"
+            android:gravity="center"
+            android:background="@drawable/imagebutton_border"
         />
     </LinearLayout>
 
@@ -54,30 +62,38 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
+        android:paddingBottom="12dp"
+        android:paddingLeft="84dp"
+        android:paddingRight="84dp"
         >
 
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="@dimen/_42sdp"
             android:layout_height="wrap_content"
             android:textSize="24sp"
             android:layout_weight="1"
-            android:paddingStart="64dp"
+            android:gravity="center"
             android:id="@+id/dart1"
+            android:background="@drawable/imagebutton_border"
             />
 
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="@dimen/_42sdp"
             android:layout_height="wrap_content"
             android:textSize="24sp"
             android:layout_weight="1"
+            android:gravity="center"
             android:id="@+id/dart2"
+            android:background="@drawable/imagebutton_border"
             />
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="@dimen/_42sdp"
             android:layout_height="wrap_content"
             android:textSize="24dp"
             android:layout_weight="1"
+            android:gravity="center"
             android:id="@+id/dart3"
+            android:background="@drawable/imagebutton_border"
             />
     </LinearLayout>
 
