@@ -36,6 +36,7 @@ public class Cricket extends Activity {
     public static boolean turn;
     // scoreStack will store the darts as they are entered for the undo function
     public ArrayList<String> scoreStack = new ArrayList<String>();
+    public Integer NumPlayers;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,6 +49,7 @@ public class Cricket extends Activity {
             mplayerNames.add(CustomAdapter.editModelArrayList.get(i).getEditTextValue());
         }
         int nameSize = mplayerNames.size();
+        NumPlayers = nameSize;
         //mplayerList.setText(String.valueOf(nameSize));
 
         // Call the cricket layout from activity_cricket.xml
@@ -123,9 +125,11 @@ public class Cricket extends Activity {
     class myOnClickHandler implements View.OnClickListener {
         private CricketPlayer player;
         private View playerView;
+        private List<CricketPlayer> cricketPlayerList;
 
-        public myOnClickHandler(CricketPlayer player){
+        public myOnClickHandler(CricketPlayer player, List<CricketPlayer> cricketPlayerList){
             this.player = player;
+            this.cricketPlayerList = cricketPlayerList;
             // Need to get the full View for the player
             playerView = player.getPlayerView();
         }
@@ -152,13 +156,24 @@ public class Cricket extends Activity {
                         btn.setImageResource(R.drawable.darts_triple);
                         scoreStack.add("num15");
                     } else if (number == 3){
-                        Integer score = player.getScore();
-                        player.setScore(score + 15);
-                        score = player.getScore();
-                        TextView scoreView = playerView.findViewById(R.id.tvCricketScore);
-                        scoreView.setText(score.toString());
-                        scoreStack.add("15");
-                        break;
+                        // Check if number is closed out
+                        Boolean closed = true;
+                        for (int i = 0; i < NumPlayers; i++) {
+                            CricketPlayer otherPlayer = cricketPlayerList.get(i);
+                            if(otherPlayer.getNum15() != 3) {
+                                closed = false;
+                            }
+
+                        }
+                        if (!closed) {
+                            Integer score = player.getScore();
+                            player.setScore(score + 15);
+                            score = player.getScore();
+                            TextView scoreView = playerView.findViewById(R.id.tvCricketScore);
+                            scoreView.setText(score.toString());
+                            scoreStack.add("15");
+                            break;
+                        }
                     }
                     player.incrementDart("num15");
                     break;
@@ -175,13 +190,24 @@ public class Cricket extends Activity {
                         btn.setImageResource(R.drawable.darts_triple);
                         scoreStack.add("num16");
                     } else if (number == 3){
-                        Integer score = player.getScore();
-                        player.setScore(score + 16);
-                        score = player.getScore();
-                        TextView scoreView = playerView.findViewById(R.id.tvCricketScore);
-                        scoreView.setText(score.toString());
-                        scoreStack.add("16");
-                        break;
+                        // Check if number is closed out
+                        Boolean closed = true;
+                        for (int i = 0; i < NumPlayers; i++) {
+                            CricketPlayer otherPlayer = cricketPlayerList.get(i);
+                            if(otherPlayer.getNum16() != 3) {
+                                closed = false;
+                            }
+
+                        }
+                        if (!closed) {
+                            Integer score = player.getScore();
+                            player.setScore(score + 16);
+                            score = player.getScore();
+                            TextView scoreView = playerView.findViewById(R.id.tvCricketScore);
+                            scoreView.setText(score.toString());
+                            scoreStack.add("16");
+                            break;
+                        }
                     }
                     player.incrementDart("num16");
                     break;
@@ -198,13 +224,24 @@ public class Cricket extends Activity {
                         btn.setImageResource(R.drawable.darts_triple);
                         scoreStack.add("num17");
                     } else if (number == 3){
-                        Integer score = player.getScore();
-                        player.setScore(score + 17);
-                        score = player.getScore();
-                        TextView scoreView = playerView.findViewById(R.id.tvCricketScore);
-                        scoreView.setText(score.toString());
-                        scoreStack.add("17");
-                        break;
+                        // Check if number is closed out
+                        Boolean closed = true;
+                        for (int i = 0; i < NumPlayers; i++) {
+                            CricketPlayer otherPlayer = cricketPlayerList.get(i);
+                            if(otherPlayer.getNum17() != 3) {
+                                closed = false;
+                            }
+
+                        }
+                        if (!closed) {
+                            Integer score = player.getScore();
+                            player.setScore(score + 17);
+                            score = player.getScore();
+                            TextView scoreView = playerView.findViewById(R.id.tvCricketScore);
+                            scoreView.setText(score.toString());
+                            scoreStack.add("17");
+                            break;
+                        }
                     }
                     player.incrementDart("num17");
                     break;
@@ -221,13 +258,24 @@ public class Cricket extends Activity {
                         btn.setImageResource(R.drawable.darts_triple);
                         scoreStack.add("num18");
                     } else if (number == 3){
-                        Integer score = player.getScore();
-                        player.setScore(score + 18);
-                        score = player.getScore();
-                        TextView scoreView = playerView.findViewById(R.id.tvCricketScore);
-                        scoreView.setText(score.toString());
-                        scoreStack.add("18");
-                        break;
+                        // Check if number is closed out
+                        Boolean closed = true;
+                        for (int i = 0; i < NumPlayers; i++) {
+                            CricketPlayer otherPlayer = cricketPlayerList.get(i);
+                            if(otherPlayer.getNum18() != 3) {
+                                closed = false;
+                            }
+
+                        }
+                        if (!closed) {
+                            Integer score = player.getScore();
+                            player.setScore(score + 18);
+                            score = player.getScore();
+                            TextView scoreView = playerView.findViewById(R.id.tvCricketScore);
+                            scoreView.setText(score.toString());
+                            scoreStack.add("18");
+                            break;
+                        }
                     }
                     player.incrementDart("num18");
                     break;
@@ -244,13 +292,24 @@ public class Cricket extends Activity {
                         btn.setImageResource(R.drawable.darts_triple);
                         scoreStack.add("num19");
                     } else if (number == 3){
-                        Integer score = player.getScore();
-                        player.setScore(score + 19);
-                        score = player.getScore();
-                        TextView scoreView = playerView.findViewById(R.id.tvCricketScore);
-                        scoreView.setText(score.toString());
-                        scoreStack.add("19");
-                        break;
+                        // Check if number is closed out
+                        Boolean closed = true;
+                        for (int i = 0; i < NumPlayers; i++) {
+                            CricketPlayer otherPlayer = cricketPlayerList.get(i);
+                            if(otherPlayer.getNum19() != 3) {
+                                closed = false;
+                            }
+
+                        }
+                        if (!closed) {
+                            Integer score = player.getScore();
+                            player.setScore(score + 19);
+                            score = player.getScore();
+                            TextView scoreView = playerView.findViewById(R.id.tvCricketScore);
+                            scoreView.setText(score.toString());
+                            scoreStack.add("19");
+                            break;
+                        }
                     }
                     player.incrementDart("num19");
                     break;
@@ -267,13 +326,24 @@ public class Cricket extends Activity {
                         btn.setImageResource(R.drawable.darts_triple);
                         scoreStack.add("num20");
                     } else if (number == 3){
-                        Integer score = player.getScore();
-                        player.setScore(score + 20);
-                        score = player.getScore();
-                        TextView scoreView = playerView.findViewById(R.id.tvCricketScore);
-                        scoreView.setText(score.toString());
-                        scoreStack.add("num20");
-                        break;
+                        // Check if number is closed out
+                        Boolean closed = true;
+                        for (int i = 0; i < NumPlayers; i++) {
+                            CricketPlayer otherPlayer = cricketPlayerList.get(i);
+                            if(otherPlayer.getNum20() != 3) {
+                                closed = false;
+                            }
+
+                        }
+                        if (!closed) {
+                            Integer score = player.getScore();
+                            player.setScore(score + 20);
+                            score = player.getScore();
+                            TextView scoreView = playerView.findViewById(R.id.tvCricketScore);
+                            scoreView.setText(score.toString());
+                            scoreStack.add("20");
+                            break;
+                        }
                     }
                     player.incrementDart("num20");
                     break;
@@ -290,13 +360,24 @@ public class Cricket extends Activity {
                         btn.setImageResource(R.drawable.darts_triple);
                         scoreStack.add("numBull");
                     } else if (number == 3){
-                        Integer score = player.getScore();
-                        player.setScore(score + 25);
-                        score = player.getScore();
-                        TextView scoreView = playerView.findViewById(R.id.tvCricketScore);
-                        scoreView.setText(score.toString());
-                        scoreStack.add("25");
-                        break;
+                        // Check if number is closed out
+                        Boolean closed = true;
+                        for (int i = 0; i < NumPlayers; i++) {
+                            CricketPlayer otherPlayer = cricketPlayerList.get(i);
+                            if(otherPlayer.getNumBull() != 3) {
+                                closed = false;
+                            }
+
+                        }
+                        if (!closed) {
+                            Integer score = player.getScore();
+                            player.setScore(score + 25);
+                            score = player.getScore();
+                            TextView scoreView = playerView.findViewById(R.id.tvCricketScore);
+                            scoreView.setText(score.toString());
+                            scoreStack.add("25");
+                            break;
+                        }
                     }
                     player.incrementDart("numBull");
                     break;
@@ -495,19 +576,19 @@ public class Cricket extends Activity {
                                   tempView.findViewById(R.id.ibtnCricket15).setEnabled(true);
 
                                   ImageButton dartbull = (ImageButton) tempView.findViewById(R.id.ibtnCricketBull);
-                                  dartbull.setOnClickListener(new myOnClickHandler(tempPlayer));
+                                  dartbull.setOnClickListener(new myOnClickHandler(tempPlayer, cricketPlayerList));
                                   ImageButton dart20 = (ImageButton) tempView.findViewById(R.id.ibtnCricket20);
-                                  dart20.setOnClickListener(new myOnClickHandler(tempPlayer));
+                                  dart20.setOnClickListener(new myOnClickHandler(tempPlayer, cricketPlayerList));
                                   ImageButton dart19 = (ImageButton) tempView.findViewById(R.id.ibtnCricket19);
-                                  dart19.setOnClickListener(new myOnClickHandler(tempPlayer));
+                                  dart19.setOnClickListener(new myOnClickHandler(tempPlayer, cricketPlayerList));
                                   ImageButton dart18 = (ImageButton) tempView.findViewById(R.id.ibtnCricket18);
-                                  dart18.setOnClickListener(new myOnClickHandler(tempPlayer));
+                                  dart18.setOnClickListener(new myOnClickHandler(tempPlayer, cricketPlayerList));
                                   ImageButton dart17 = (ImageButton) tempView.findViewById(R.id.ibtnCricket17);
-                                  dart17.setOnClickListener(new myOnClickHandler(tempPlayer));
+                                  dart17.setOnClickListener(new myOnClickHandler(tempPlayer, cricketPlayerList));
                                   ImageButton dart16 = (ImageButton) tempView.findViewById(R.id.ibtnCricket16);
-                                  dart16.setOnClickListener(new myOnClickHandler(tempPlayer));
+                                  dart16.setOnClickListener(new myOnClickHandler(tempPlayer, cricketPlayerList));
                                   ImageButton dart15 = (ImageButton) tempView.findViewById(R.id.ibtnCricket15);
-                                  dart15.setOnClickListener(new myOnClickHandler(tempPlayer));
+                                  dart15.setOnClickListener(new myOnClickHandler(tempPlayer, cricketPlayerList));
 
 
                               }
